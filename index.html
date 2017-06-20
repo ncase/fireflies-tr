@@ -1,0 +1,410 @@
+<!doctype>
+<html>
+
+<head>
+
+	<!-- TRANSLATE: 'title' -->
+	<title>Ateş Böcekleri</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=640">
+	<link rel="icon" type="image/png" href="favicon.png">
+
+	<!-- TRANSLATE: 'name' and 'description' -->
+	<meta itemprop="name" content="Ateş Böcekleri">
+	<meta itemprop="description" content="Ateş böceği simülasyonu">
+	<meta itemprop="image" content="http://ncase.me/fireflies/social/thumbnail.png">
+
+	<!-- TRANSLATE: 'twitter:title' and 'twitter:description' -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@ncasenmare">
+	<meta name="twitter:title" content="Ateş Böcekleri">
+	<meta name="twitter:description" content="Ateş böceği simülasyonu">
+	<meta name="twitter:creator" content="@ncasenmare">
+	<meta name="twitter:image" content="http://ncase.me/fireflies/social/thumbnail.png">
+
+	<!-- TRANSLATE: 'og:title' and 'og:description' -->
+	<meta property="og:title" content="Ateş Böcekleri">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="http://ncase.me/fireflies/">
+	<meta property="og:image" content="http://ncase.me/fireflies/social/thumbnail.png">
+	<meta property="og:description" content="Ateş böceği simülasyonu">
+
+	<!-- Styles -->
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/widgets.css">
+
+</head>
+<body>
+
+<!-- The firefly simulation -->
+<div id="game"></div>
+
+<!-- The WORDS! -->
+<div id="words">
+<h1 style="font-size:2.2em">“Ateş Böcekleri”</h1>
+
+<span id="credits" style="font-size:17px">
+<a href="https://github.com/tauslu" target="_blank">Tauslu</a> tarafından çevrildi |
+<a href="http://ncase.me/fireflies/">İngilizce orijinal</a></span>
+
+<p>
+Yılbaşı ışıkları gibi, ateş böcekleri yaşadıkları yeri
+az da olsa sihirli yaparlar. </p>
+
+<div style="overflow:hidden;">
+	<img src="ui/chaos.png" width="150" style="float: left;"/>
+	<div style="width: 185px; float: right;">
+		<span style="font-size:1.6em; line-height:1.1em;">TIKLA &amp; SÜRÜKLE</span>
+		<br>
+		ve ateş böceği
+		<br>
+		kaosu oluştur &rarr;
+	</div>
+</div>
+
+<p>
+Ama bazı ateş böceği türleri <em>daha da </em> sihirlidirler. 
+Güney doğu Asya'da, bir gece yarısı nehir yatağına girerseniz, 
+bu güzel ışık şovuna rastlayabiliriniz. Tayland'lı ateş böceklerinin ikramı:
+</p>
+
+<iframe width="350" height="197" src="https://www.youtube-nocookie.com/embed/ZGvtnE1Wy6U?rel=0&amp;start=64" frameborder="0" allowfullscreen></iframe>
+
+<p>
+Bütün karanlık orman, bir an anda aydınlanıveriyor,
+karanlığa giriyor, sonra tekrar aydınlanıyor – neredeyse muazzam bir eş zamanlamayla.
+Binlerce ateş böceği birbirlerine nasıl uyum sağlıyor? 
+Bu senfoninin şefi kim? 
+</p>
+
+<p>
+Yüzyıl boyunca bu bir gizemdi, ve 1992 yılında, 
+ABD'li bilim insanları bunu çözmeye koyuldular. 
+Üzücü olarak ama şaşırtıcı olmayarak, basın dalga geçti –
+<em>“Devlet vergi paralarınızı Borneo'da ateş böceklerini incelemek için çarçur ediyor:
+Parlak bir fikir değil!”</em> demişti bir gazete.
+Kararlı bir şekilde, fotoğraf ve hesap makinalarıyla biliminsanları çalışmalarına devam ettiler.
+</p>
+
+<p>
+Peki, binlerce ateş böceği <em>nasıl</em> takip edecekleri, onunla 
+eş zamanlı parlayacakları bir önderi seçiyorlar? 
+Bilim insanlarının bulduğu cevap basitti: 
+</p>
+
+<p>
+Seçmiyorlar.
+</p>
+
+<p>
+Her ateş böceğinin <em>kendi</em> dahili saati var ve
+saat 12'ye gelince, parlıyor. 
+</p>
+
+<p>
+<img src="ui/clock.png" width="350"/>
+</p>
+
+<p>
+Ve saatlerini merkezi bir öndere göre ayarlamaktansa, 
+ateş böcekleri şöyle yapıyorlar:
+</p>
+
+<p>
+1. Adım: Yakında bir ateş böceğinin parladığını görünce,
+dahili saatini biraz ileri al.
+</p>
+
+<p>
+<img src="ui/nudge.png" width="350"/>
+</p>
+
+<p>
+2. Adım: Bu kadar.
+</p>
+
+<p>
+Bu kadar ufak, az mesafeli bir etkileşim ateş böceği dolu bir ormanda eş zamanlı bir parıldama harmonisi 
+oluşturabilir mi? Bulmanın bir yolu var...
+</p>
+
+<hr/>
+
+	<!-- TRANSLATE: 'label', 'label-on', and 'label-off' -->
+	<widget type="toggle"
+		id="neighborNudgeRule"
+		background="#000" color="#fff"
+		background-on="#FEE27F" color-on="#000"
+
+		label="Komşunu takip et:<br>(açmak için tıkla&rarr;)"
+		label-on="AÇIK" label-off="KAPALI">
+	</widget>
+
+<hr/>
+
+<p>
+Bekleyin. Dikkatlice izleyin.
+</p>
+
+<p>
+Ne görüyorsunuz?
+</p>
+
+<p>
+En başta, çok bir şey değil.
+Ateş böcekleri düzensiz şekilde parıldıyor gibiler. 
+</p>
+
+<p>
+Ama biraz sonra, ufak "grupların" beraber parıldadığını görüyorsunuz  –
+ama bu "gruplar" diğer gruplarla eş zamanlı değiller .
+</p>
+
+<p>
+Biraz daha geçince, ateş böceklerinin “meksika dalgası”,
+yapmaya başladıklarını görüyorsunuz.
+</p>
+
+<p>
+En sonunda, neredeyse bütün ateş böcekleri eş zamanlı olarak parıldıyorlar –
+ve nihayetinde, geç kalanlar da toplu dansa katılıyorlar.
+</p>
+
+<p>
+Daha muhteşem olan nedir? Eğer ateş böceklerini ufak bir kaos oluşturarak rahatsız ederseniz...
+</p>
+
+<div style="overflow:hidden;">
+	<img src="ui/chaos.png" width="150" style="float: left;"/>
+	<div style="width: 185px; float: right;">
+		<span style="font-size:1.6em; line-height:1.1em;">TIKLA &amp; SÜRÜKLE</span>
+		<br>
+		ve ateş böceklerini
+		<br>
+		etkileyin&rarr;
+	</div>
+</div>
+
+<p>
+...evet, belli bir süreliğine birliği bozuyorlar ama yavaşca ve kesin olarak,
+kendilerine gelip birlik olarak parıldayacaklar. 
+</p>
+
+<p>
+Bu tuş &amp; ayarları kullanarak,
+sanal ateş böcekleriyle oynayabilirsiniz:
+</p>
+
+<hr/>
+
+	<!-- TRANSLATE: 'label', 'label-min', and 'label-max' -->
+	<widget type="slider"
+		id="numFireflies"
+		background="#FEE27F" color="#fff"
+		min=10 max=500 step=1
+
+		label="Ateş böcekleri sayısı:"
+		label-min="10" label-max="500">
+	</widget>
+
+	<!-- TRANSLATE: 'label', 'label-on', and 'label-off' -->
+	<widget type="toggle"
+		id="showClocks"
+		background="#000" color="#fff"
+		background-on="#FEE27F" color-on="#000"
+
+		label="Saatleri göster:"
+		label-on="AÇIK" label-off="KAPALI">
+	</widget>
+
+	<!-- TRANSLATE: 'label', 'label-min', and 'label-max' -->
+	<widget type="slider"
+		id="clockSpeed"
+		background="#FEE27F" color="#fff"
+		min="0.2" max="2" step="0.05"
+
+		label="Ateş böceklerinin saat hızı:"
+		label-min="yavaş" label-max="hızlı">
+	</widget>
+
+	<!-- TRANSLATE: 'label', 'label-on', and 'label-off' -->
+	<widget type="toggle"
+		id="neighborNudgeRule"
+		background="#000" color="#fff"
+		background-on="#FEE27F" color-on="#000"
+
+		label="Komşunu takip et:"
+		label-on="AÇIK" label-off="KAPALI">
+	</widget>
+
+	<!-- TRANSLATE: 'label', 'label-min', and 'label-max' -->
+	<widget type="slider"
+		id="nudgeAmount"
+		background="#FEE27F" color="#fff"
+		min="0.01" max="0.10" step="0.001"
+
+		label="Saati ne kadar ileri al:"
+		label-min="az" label-max="çok">
+	</widget>
+
+	<!-- TRANSLATE: 'label', 'label-min', and 'label-max' -->
+	<widget type="slider"
+		id="neighborRadius"
+		background="#FEE27F" color="#fff"
+		min=50 max=500 step=10
+
+		label="Komşuların nerede olmalı:"
+		label-min="yakında" label-max="uzakta">
+	</widget>
+
+	<!-- TRANSLATE: 'label' -->
+	<widget type="button"
+		id="resetFireflies"
+		background="#000" color="#fff"
+		background-hover="#FEE27F" color-hover="#000"
+
+		label="Ateş böceklerini sıfırla">
+	</widget>
+
+	<!-- TRANSLATE: 'label' -->
+	<widget type="button"
+		id="resetEverything"
+		background="#000" color="#fff"
+		background-hover="#FEE27F" color-hover="#000"
+
+		label="Her şeyi sıfırla">
+	</widget>
+
+<hr/>
+
+<p>
+Ve ateş böceklerinin sihirinin arkasındaki sır bu: 
+</p>
+
+<div style="overflow:hidden; text-align:center">
+<img src="ui/emergence.png" width="350" style="margin-bottom:25px"/>
+<div style="width:170px; float:left;">
+	<span style="font-size:33px; line-height:10px">ufak ölçekli</span><br><span style="font-size:27px">etkileşimler</span>
+</div>
+<div style="width:10px; float:left; position:relative; left:-5px; top:7px">&rarr;</div>
+<div style="width:170px; float:left;">
+	<span style="font-size:33px; line-height:10px">büyük-ölçekli</span><br><span style="font-size:27px">kurumlar</span>
+</div>
+</div>
+
+<p>
+Aşağıdan yukarı olarak eş zamanlı çalışmayı sadece ateş böcekleri yapmıyor. 
+Nöronlarınız beyin dalgaları oluşturuyor. 
+Kalbinizin ritim hücreleri eş zamanlı hareket ediyor. 
+<a target="_blank" href="https://www.youtube.com/watch?v=5v5eBf2KwF8">
+Sallanan bir platformdaki metronomlar bile beraber hareket ediyorlar.</a>
+Bunun dışında, kendi başına eş zamanlılığı anlamak daha iyi lazerler, bilgisayarlar ve iletişim teknolojileri
+oluşturmamıza yardımcı oldu
+</p>
+
+<p>
+Ve kendi başına eş zamanlılığın matematiğinin ateş böceklerini seven biliminsanları tarafından keşfedildiğini düşünmek.
+Projelerini <em>“Parlak bir fikir değil ”</em> olarak adlandırmak pek parlak bir fikir değilmiş. 
+</p>
+
+<p>
+. . .
+</p>
+
+<p>
+Sessizlikte süzülürken,
+parıldayarak karanlıkta bir anlık delik açıyorsun,
+tek başına pek pek bir şey gözükmüyor
+
+</p>
+
+<p>
+Ama sen parıldadığın zaman, yakındakilerinde parıldamak istiyor,
+normalinden daha da yakın bir zamanda.
+Ve sana yakın olanlar, <em>kendilerine</em> yakın olanlara ilham veriyor.
+</p>
+
+<p>
+Ve böyle devam ediyor.
+</p>
+
+<p>
+En başta, ufak bir grup beraber parıldıyor.
+Ondan sonra, bir ışık dalgası topluluğun üzerinden geçiyor.
+Ve sonunda, her beraber parlıyorsunuz,
+parlak bir fener, harmoni ve birlik içinde – eş zamanlı.
+</p>
+
+<p>
+Bugün hangi ufak ölçekli etkileşimi yapacaksın, ateş böceği?
+</p>
+
+<hr class="footer"/>
+
+<div id="Haklar">
+	<p>
+	Steven Strogatz'ın kitabından ilham alındı,<br>
+	<a href="http://www.powells.com/book/sync-how-order-emerges-from-chaos-in-the-universe-nature-daily-life-9780786887217" target="_blank">
+	SYNC: How Order Emerges From Chaos In the Universe, Nature, and Daily Life
+	</a>
+	</p>
+
+	<p>
+	Oluşturan
+	<a href="http://ncase.me/" target="_blank">Nicky Case</a>,
+	Hamilerimin sevgisi &amp; desteğiyle
+	<a href="credits" target="_blank">(hepsini burada görebilirsiniz)</a>
+	</p>
+
+	<p>
+	“Fireflies” açık kaynaktır ve umuma adanmıştır. 
+	<a href="https://github.com/ncase/fireflies" target="_blank">(Github'dan kodu alın!)</a>
+	</p>
+
+	<p>
+	<a href="https://www.patreon.com/ncase" target="_blank">
+		<span id="patreon" >Patreon'da beni destekleyin  &lt;3</span>
+	</a>
+	</p>
+
+	<p>&nbsp;</p>
+
+	<p>
+	
+	Grubunuzla paylaşın:<br>
+
+	<!-- TRANSLATE: 'text' -->
+	<sharing text="Ateş böcekleri ve bize öğretecekleri. Etkileşimli bir simülasyon:"
+			 link="http://ncase.me/fireflies/"></sharing>
+
+	</p>
+
+	<p style="margin-top:45px">
+
+	fan-translations:<br>
+	<a href="http://ncase.me/fireflies-zh/">中文 (chinese)</a><br>
+	<a href="http://ncase.me/fireflies-pt-br/">português (brazilian portuguese)</a><br>
+	<a href="http://ncase.me/fireflies-fr/">français (french)</a>
+
+	</p>
+
+</div>
+
+</div>
+
+</body>
+</html>
+
+<!-- Library code -->
+<script src="js/pixi.min.js"></script>
+<script src="js/howler.js"></script>
+<script src="js/minpubsub.src.js"></script>
+<script src="js/helpers.js"></script>
+<script src="js/Mouse.js"></script>
+<script src="js/widgets.js"></script>
+<script src="js/sharing.js"></script>
+
+<!-- Main code -->
+<script src="js/index.js?v=2"></script>
